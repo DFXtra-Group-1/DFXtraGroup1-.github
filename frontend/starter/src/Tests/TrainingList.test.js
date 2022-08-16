@@ -3,14 +3,14 @@ import { render, screen } from '@testing-library/react';
 import ProfileList from '../Components/profileView/ProfileList';
 import mockData from './graduate-user-test.json';
 
-describe(`Profile list tests`, () => {
-    it(`should render profile lists`, () => {
+describe(`Profile card tests`, () => {
+    it(`should render profile cards`, () => {
 
         render(<ProfileList gradProps1={mockData.graduateUser} />);
 
-        const title = screen.getByRole(`heading`);
+        const gradName = screen.getByRole(`heading`);
 
-        expect(title).toBeInTheDocument();
+        expect(gradName).toBeInTheDocument();
 
     })
     xit(`should render 7 cards`, () => {
@@ -20,7 +20,7 @@ describe(`Profile list tests`, () => {
 
         expect(gradList.length).toBe(mockData.graduateUser.length)
     })
-    it(`should render David's details`, () => {
+    it(`should render bobs details`, () => {
 
         render(<ProfileList gradProps1={mockData.graduateUser[0]} />)
 
