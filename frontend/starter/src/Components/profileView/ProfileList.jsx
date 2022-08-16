@@ -3,10 +3,10 @@ const ProfileList = ({ gradProps1 }) => {
     return (
 
         <div className="col-sm-6">
-            <div className="card m-2">
+            <div className="card m-2 border-white">
                 <div className="card-body">
                     <h5 className="card-title"> Your Profile </h5>
-                    <div className="ps-5">
+                    <div className="ps-5 pt-3">
                         <p className="card-text">Name: {firstName} {lastName}</p>
                         <p className="card-text" >Personal Email: {personalEmail}</p>
                         <p className="card-text">Digital Futures Email: {digitalFuturesEmail}</p>
