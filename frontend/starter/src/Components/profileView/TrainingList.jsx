@@ -7,10 +7,10 @@ const TrainingList = ({ trainingProp }) => {
                 <div className="card-body">
                     <h5 className="card-title"> Your Training </h5>
                     <div className="ps-5">
-                        <p className="card-text">Cohort:{cohort}</p>
-                        <p className="card-text" >Learning Path:{learningPath}</p>
-                        <p className="card-text">Trainer:{trainer}</p>
-                        <p className="card-text">Training finish date:{trainingFinishDate}</p>
+                        <p className="card-text">Cohort: {cohort}</p>
+                        <p className="card-text" >Learning Path: {learningPath}</p>
+                        <p className="card-text">Trainer: {trainer}</p>
+                        <p className="card-text">Training finish date: {trainingFinishDate}</p>
                     </div>
                 </div>
             </div>

@@ -1,16 +1,16 @@
 import { render, screen } from '@testing-library/react';
 
-import ProfileList from '../Components/profileView/ProfileList';
+import TrainingList from '../Components/profileView/TrainingList';
 import mockData from './graduate-user-test.json';
 
-describe(`Profile card tests`, () => {
-    it(`should render profile cards`, () => {
+describe(`Training list tests`, () => {
+    it(`should render training list`, () => {
 
-        render(<ProfileList gradProps1={mockData.graduateUser} />);
+        render(<TrainingList trainingProp={mockData.graduateUser} />);
 
-        const gradName = screen.getByRole(`heading`);
+        const trainingList1 = screen.getByRole(`heading`);
 
-        expect(gradName).toBeInTheDocument();
+        expect(trainingList1).toBeInTheDocument();
 
     })
     xit(`should render 7 cards`, () => {
@@ -20,13 +20,13 @@ describe(`Profile card tests`, () => {
 
         expect(gradList.length).toBe(mockData.graduateUser.length)
     })
-    it(`should render bobs details`, () => {
+    it(`should render cohort training details`, () => {
 
-        render(<ProfileList gradProps1={mockData.graduateUser[0]} />)
+        render(<TrainingList trainingProp={mockData.graduateUser[0]} />)
 
-        const gradName = screen.getByText(`Name: ${mockData.graduateUser[0].firstName} ${mockData.graduateUser[0].lastName}`)
+        const trainingList1 = screen.getByText(`Cohort: ${mockData.graduateUser[0].cohort}`)
 
-        expect(gradName.textContent).toContain(mockData.graduateUser[0].firstName)
+        expect(trainingList1.textContent).toContain(mockData.graduateUser[0].cohort)
     })
 
 });

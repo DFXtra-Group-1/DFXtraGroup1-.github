@@ -9,7 +9,7 @@ function App() {
   return (
 
     <div className="App">
-      <YourProfile graduates={mockData.graduateUser} />
+      {/* <YourProfile graduates={mockData.graduateUser} /> */}
       <YourTraining graduates={mockData.graduateUser} />
     </div>
   );
