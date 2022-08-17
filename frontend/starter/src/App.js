@@ -8,7 +8,7 @@ function App() {
 
   return (
 
-    <div className="App">
+    <div className="App background">
       {/* <YourProfile graduates={mockData.graduateUser} /> */}
       <YourTraining graduates={mockData.graduateUser} />
     </div>

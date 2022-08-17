@@ -2,6 +2,7 @@ const TrainingList = ({ trainingProp }) => {
     const { cohort, learningPath, trainer, trainingFinishDate } = trainingProp;
 
     return (
+
         <div className="col-sm-6">
             <div className="card mx-2 my-5">
                 <div className="card-body">
