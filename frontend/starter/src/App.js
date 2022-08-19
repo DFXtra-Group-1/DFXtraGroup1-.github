@@ -13,8 +13,12 @@ function App() {
 
     <div className="App">
       {/* <YourProfile graduates={mockData.graduateUser} /> */}
+<<<<<<< HEAD
       {/* <YourTraining graduates={mockData.graduateUser} /> */}
       <ViewProfilePage SERVER_URL={ SERVER_URL }/>
+=======
+      <YourTraining graduates={mockData.graduateUser} />
+>>>>>>> Training
     </div>
   );
 }
