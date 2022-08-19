@@ -1,7 +1,7 @@
 import Badges from "./Badges";
 import Scores from "./Scores";
 
-const Info = ({ graduates }) => {
+const Info = ({ graduate }) => {
     return (
         <>
             <div className="container text-start border border-4">
@@ -16,9 +16,8 @@ const Info = ({ graduates }) => {
                             <Badges />
                         </div>
                         <div className="col-6">
-                            {graduates.map(graduate => {
-                                return <> <Scores scoresProp={graduate} key={graduate._id} /></>
-                            })}
+                            <Scores scoresProp={graduate} key={graduate._id} />
+
                         </div>
                     </div>
                 </div>

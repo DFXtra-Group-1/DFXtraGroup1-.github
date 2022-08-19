@@ -1,6 +1,6 @@
 const ProfileCard = ({ gradProps2 }) => {
     const { degrees, schoolQualifications, workExperience, certificatesAndAwards, portfolio } = gradProps2;
-
+    // console.log(schoolQualifications);
     return (
 
         <div className="col-sm-6">
