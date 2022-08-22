@@ -1,18 +1,12 @@
 import TrainingList from "./TrainingList";
 import TrainingCard from "./TrainingCard";
 
-const YourTraining = ({ graduates }) => {
+const YourTraining = ({ graduate }) => {
     return (
-        <>
-            <div className="row">
-                {graduates.map(graduate => {
-                    return <><TrainingList key={graduate._id} trainingProp={graduate} /> <TrainingCard /></>
-                })}
+        <div className="row">
+            <TrainingList key={graduate._id} trainingProp={graduate} /> <TrainingCard />
 
-
-
-            </div >
-        </>
+        </div>
     )
 };
 

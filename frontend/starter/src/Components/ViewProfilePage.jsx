@@ -52,8 +52,7 @@ const ViewProfilePage = ({ SERVER_URL }) => {
     return (
         <>
             <YourProfile graduate={graduate} />
-            {/* <YourTraining graduate={graduate} /> */}
-            {/* {console.log(graduate)} */}
+            <YourTraining graduate={graduate} />
             <Info graduate={graduate} />
         </>
     );
