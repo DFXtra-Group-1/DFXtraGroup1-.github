@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Header from './Components/Header';
 import ViewProfilePage from './Components/ViewProfilePage';
+import EditProfilePage from './Components/editView/EditProfilePage';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
         <Header />
         <Routes>
           <Route path='/graduate/:uuid' element={<ViewProfilePage SERVER_URL={SERVER_URL} />} />
+          <Route path='/graduate/:uuid/edit' element={<EditProfilePage SERVER_URL={SERVER_URL} />} />
         </Routes>
       </div>
     </Router>

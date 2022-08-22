@@ -1,5 +1,6 @@
 import ProfileCard from "./ProfileCard";
 import ProfileList from "./ProfileList";
+import { NavLink } from "react-router-dom";
 
 const YourProfile = ({ graduate }) => {
 
@@ -27,12 +28,15 @@ const YourProfile = ({ graduate }) => {
     return (
         <div className="row">
             <h5 className="card-title"> Your Profile </h5>
+            <NavLink to="/graduate/:uuid/edit">
+                <button className="btn">Edit</button>
+            </NavLink>
             <ProfileList
                 gradProps1={gradProps1}
             />
             <ProfileCard
                 gradProps2={gradProps2} />
-        </div >
+        </div>
     )
 
 };
