@@ -26,6 +26,7 @@ const YourProfile = ({ graduate }) => {
 
     return (
         <div className="row">
+            <h5 className="card-title"> Your Profile </h5>
             <ProfileList
                 gradProps1={gradProps1}
             />

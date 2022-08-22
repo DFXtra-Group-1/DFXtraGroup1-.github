@@ -9,7 +9,7 @@ const YourTraining = ({ graduates }) => {
                     return <><TrainingList key={graduate._id} trainingProp={graduate} /> <TrainingCard /></>
                 })}
 
-                
+
 
             </div >
         </>
