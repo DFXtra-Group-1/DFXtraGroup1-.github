@@ -3,9 +3,12 @@ import Info from './information/Info';
 import YourTraining from "./profileView/YourTraining";
 import axios from 'axios';
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 
 const ViewProfilePage = ({ SERVER_URL }) => {
+
+    const { uuid } = useParams();
 
     const [graduate, setGraduate] = useState({
         "_id": "",
@@ -36,7 +39,7 @@ const ViewProfilePage = ({ SERVER_URL }) => {
 
     const getData = async () => {
 
-        await axios.get(`${SERVER_URL}/graduate/2`)
+        await axios.get(`${SERVER_URL}/graduate/${uuid}`)
             .then(res => {
                 console.log(res.data)
                 setGraduate(res.data);

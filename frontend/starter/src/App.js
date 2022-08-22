@@ -10,10 +10,14 @@ function App() {
 
   return (
 
-    <div className="App background">
-      <Header />
-      <ViewProfilePage SERVER_URL={SERVER_URL} />
-    </div>
+    <Router>
+      <div className="App background">
+        <Header />
+        <Routes>
+          <Route path='/graduate/:uuid' element={<ViewProfilePage SERVER_URL={SERVER_URL} />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
