@@ -3,7 +3,7 @@ const DropDowns = () => {
 
     return (
         <>
-            <select class="form-select" aria-label="Default select example">
+            <select className="form-select" aria-label="Default select example">
                 <option selected>Gender</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
@@ -12,9 +12,11 @@ const DropDowns = () => {
                 <option value="prefer-not-to-say">Prefer not to say</option>
             </select>
 
+            <br />
+
             <Nationality />
 
-            <select class="form-select" aria-label="Default select example">
+            <select className="form-select" aria-label="Default select example">
                 <option selected>Personality Type</option>
                 <option value="INTJ">Architect - INTJ</option>
                 <option value="INTP">Logician - INTP</option>
@@ -37,6 +39,7 @@ const DropDowns = () => {
                 <option value="ESFP">Entertainer - ESFP</option>
 
             </select>
+            <br />
         </>
     );
 

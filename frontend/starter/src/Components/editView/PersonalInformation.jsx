@@ -1,7 +1,7 @@
 import DropDowns from "./DropDowns";
-import ProfileList from "../profileView/ProfileList";
+import ProfileEdit from "./ProfileEdit";
 
-const PersonalInformation = ({ graduate }) => {
+const PersonalInformation = ({ graduate, setFirstName, setLastName, setDateOfBirth, setGender, setNationality, setPersonality, setPhone, setLinkedIn, setPersonalEmail, setDigitalFuturesEmail, setGitHub }) => {
 
     const gradProps1 = {
         _id: graduate._id,
@@ -17,13 +17,14 @@ const PersonalInformation = ({ graduate }) => {
     return (
         <div className="row">
             <h5 className="card-title"> Personal Information </h5>
-            <ProfileList
-                gradProps1={gradProps1}
+            <ProfileEdit
+                gradProps1={gradProps1} setFirstName={setFirstName} setLastName={setLastName} setDateOfBirth={setDateOfBirth} setPhone={setPhone} setLinkedIn={setLinkedIn} setPersonalEmail={setPersonalEmail} setDigitalFuturesEmail={setDigitalFuturesEmail} setGitHub={setGitHub}
             />
-            <DropDowns />
+            <DropDowns
+                setGender={setGender} setNationality={setNationality} setPersonality={setPersonality}
+            />
         </div>
     )
-
 };
 
 export default PersonalInformation;

@@ -1,8 +1,8 @@
 const Nationality = () => {
     return (
 
-        <select>
-            <option selected>Nationality</option>
+        <select className="form-select" aria-label="Default select example">
+            <option >Nationality</option>
             <option value="Afghanistan">Afghanistan</option>
             <option value="Albania">Albania</option>
             <option value="Algeria">Algeria</option>
@@ -122,7 +122,7 @@ const Nationality = () => {
             <option value="Kyrgyzstan">Kyrgyzstan</option>
             <option value="Lao">Lao People's Democratic Republic</option>
             <option value="Latvia">Latvia</option>
-            <option value="Lebanon" selected>Lebanon</option>
+            <option value="Lebanon">Lebanon</option>
             <option value="Lesotho">Lesotho</option>
             <option value="Liberia">Liberia</option>
             <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
