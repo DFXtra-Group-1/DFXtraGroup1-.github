@@ -1,16 +1,6 @@
-import { useState } from "react";
+const ProfileEdit = ({ gradProps1, setFirstName, setLastName, setPhone, setLinkedIn, setPersonalEmail, setDigitalFuturesEmail, setGitHub }) => {
 
-const ProfileEdit = ({ gradProps1, setFirstName, setLastName, setDateOfBirth, setPhone, setLinkedIn, setPersonalEmail, setDigitalFuturesEmail, setGitHub }) => {
-
-    // const { firstName, lastName, personalEmail, digitalFuturesEmail, gitHub, linkedIn, phone } = gradProps1;
-
-    const [firstName, setFirstName] = useState(gradProps1.firstName);
-    const [lastName, setLastName] = useState(gradProps1.lastName);
-    const [personalEmail, setPersonalEmail] = useState(gradProps1.personalEmail);
-    const [digitalFuturesEmail, setDigitalFuturesEmail] = useState(gradProps1.digitalFuturesEmail);
-    const [gitHub, setGitHub] = useState(gradProps1.gitHub);
-    const [linkedIn, setLinkedIn] = useState(gradProps1.linkedIn);
-    const [phone, setPhone] = useState(gradProps1.phone);
+    const { firstName, lastName, personalEmail, digitalFuturesEmail, gitHub, linkedIn, phone } = gradProps1;
 
     return (
         <div className="col-sm-6">
@@ -52,3 +42,12 @@ const ProfileEdit = ({ gradProps1, setFirstName, setLastName, setDateOfBirth, se
 }
 
 export default ProfileEdit;
+
+
+    // const [firstName, setFirstName] = useState(gradProps1.firstName);
+    // const [lastName, setLastName] = useState(gradProps1.lastName);
+    // const [personalEmail, setPersonalEmail] = useState(gradProps1.personalEmail);
+    // const [digitalFuturesEmail, setDigitalFuturesEmail] = useState(gradProps1.digitalFuturesEmail);
+    // const [gitHub, setGitHub] = useState(gradProps1.gitHub);
+    // const [linkedIn, setLinkedIn] = useState(gradProps1.linkedIn);
+    // const [phone, setPhone] = useState(gradProps1.phone);

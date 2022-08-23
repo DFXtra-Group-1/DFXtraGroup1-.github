@@ -1,7 +1,7 @@
 import DropDowns from "./DropDowns";
 import ProfileEdit from "./ProfileEdit";
 
-const PersonalInformation = ({ graduate, setFirstName, setLastName, setDateOfBirth, setGender, setNationality, setPersonality, setPhone, setLinkedIn, setPersonalEmail, setDigitalFuturesEmail, setGitHub }) => {
+const PersonalInformation = ({ graduate, setFirstName, setLastName, setGender, setNationality, setPersonality, setPhone, setLinkedIn, setPersonalEmail, setDigitalFuturesEmail, setGitHub }) => {
 
     const gradProps1 = {
         _id: graduate._id,
@@ -18,7 +18,7 @@ const PersonalInformation = ({ graduate, setFirstName, setLastName, setDateOfBir
         <div className="row">
             <h5 className="card-title"> Personal Information </h5>
             <ProfileEdit
-                gradProps1={gradProps1} setFirstName={setFirstName} setLastName={setLastName} setDateOfBirth={setDateOfBirth} setPhone={setPhone} setLinkedIn={setLinkedIn} setPersonalEmail={setPersonalEmail} setDigitalFuturesEmail={setDigitalFuturesEmail} setGitHub={setGitHub}
+                gradProps1={gradProps1} setFirstName={setFirstName} setLastName={setLastName} setPhone={setPhone} setLinkedIn={setLinkedIn} setPersonalEmail={setPersonalEmail} setDigitalFuturesEmail={setDigitalFuturesEmail} setGitHub={setGitHub}
             />
             <DropDowns
                 setGender={setGender} setNationality={setNationality} setPersonality={setPersonality}

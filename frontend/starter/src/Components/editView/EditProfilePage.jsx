@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 
 
 const EditProfilePage = ({ SERVER_URL }) => {
+
     const { uuid } = useParams()
     const [graduate, setGraduate] = useState({
         "_id": "",
@@ -38,10 +39,14 @@ const EditProfilePage = ({ SERVER_URL }) => {
     const _id = graduate._id;
     const uuid1 = graduate.uuid;
     const available = graduate.available;
+    const dateOfBirth = graduate.dateOfBirth;
+    const cohort = graduate.cohort;
+    const learningPath = graduate.learningPath;
+    const trainer = graduate.trainer;
+    const trainingFinishDate = graduate.trainingFinishDate;
 
-    const [firstName, setFirstName] = useState(graduate.firstName)
-    const [lastName, setLastName] = useState(graduate.lastName)
-    const [dateOfBirth, setDateOfBirth] = useState(graduate.dateOfBirth);
+    const [firstName, setFirstName] = useState(graduate.firstName);
+    const [lastName, setLastName] = useState(graduate.lastName);
     const [gender, setGender] = useState(graduate.gender);
     const [nationality, setNationality] = useState(graduate.nationality);
     const [personality, setPersonality] = useState(graduate.personality);
@@ -57,10 +62,11 @@ const EditProfilePage = ({ SERVER_URL }) => {
     const [portfolio, setPortfolio] = useState(graduate.portfolio);
     const [personalSummary, setPersonalSummary] = useState(graduate.personalSummary);
 
-    const cohort = graduate.cohort;
-    const learningPath = graduate.learningPath;
-    const trainer = graduate.trainer;
-    const trainingFinishDate = graduate.trainingFinishDate;
+    // const personalProps1 = {
+
+    // }
+
+
 
     const getData = async () => {
         await axios.get(`${SERVER_URL}/graduate/${uuid}`)
@@ -70,27 +76,31 @@ const EditProfilePage = ({ SERVER_URL }) => {
     }
     useEffect(() => {
         getData()
-    }, [])
+    }, []);
 
     const submitHandler = e => {
         e.preventDefault();
         const graduateUpdated = new GraduateModel(_id, uuid1, available, firstName, lastName, dateOfBirth, gender, nationality, personality, phone, linkedIn, gitHub, personalEmail, digitalFuturesEmail, degrees, schoolQualifications, workExperience, certificatesAndAwards, portfolio, personalSummary, cohort, learningPath, trainer, trainingFinishDate)
 
         putGraduate(graduateUpdated)
-    }
+    };
 
     const putGraduate = async graduate => {
         try {
-            await axios.put(`${SERVER_URL}/{uuid}`, graduate)
+            await axios.put(`${SERVER_URL}/${uuid}`, graduate)
         }
         catch (err) {
             alert(`Something went wrong: ${err.message}`)
         }
-    }
+    };
 
     return (
-        <PersonalInformation graduate={graduate} setFirstName={setFirstName} setLastName={setLastName} setDateOfBirth={setDateOfBirth} setGender={setGender} setNationality={setNationality} setPersonality={setPersonality} setPhone={setPhone} setLinkedIn={setLinkedIn} setPersonalEmail={setPersonalEmail} setDigitalFuturesEmail={setDigitalFuturesEmail} setGitHub={setGitHub} />
-
+        <>
+            <form onSubmit={submitHandler}>
+                <button className="btn" type="submit">Submit draft</button>
+                <PersonalInformation graduate={graduate} setFirstName={setFirstName} setLastName={setLastName} setGender={setGender} setNationality={setNationality} setPersonality={setPersonality} setPhone={setPhone} setLinkedIn={setLinkedIn} setPersonalEmail={setPersonalEmail} setDigitalFuturesEmail={setDigitalFuturesEmail} setGitHub={setGitHub} />
+            </form>
+        </>
     )
 };
 
