@@ -1,17 +1,20 @@
-const ProfileEdit = ({ gradProps1, setFirstName, setLastName, setPhone, setLinkedIn, setPersonalEmail, setDigitalFuturesEmail, setGitHub }) => {
+const ProfileEdit = ({ gradProps1, setProps1 }) => {
 
     const { firstName, lastName, personalEmail, digitalFuturesEmail, gitHub, linkedIn, phone } = gradProps1;
+
+    const { setFirstName, setLastName, setPersonalEmail, setDigitalFuturesEmail, setGitHub, setLinkedIn, setPhone } = setProps1;
 
     return (
         <div className="col-sm-6">
             <div className="card m-2 border-white">
                 <div className="card-body">
                     <div className="ps-5 pt-3">
-                        <label htmlFor="name">Name:</label>
-                        <input className="card-text" value={firstName + " " + lastName} onChange={e => {
-                            setFirstName(e.target.value)
-                            setLastName(e.target.value)
-                        }} />
+                        <label htmlFor="firstName">First name:</label>
+                        <input className="card-text" value={firstName} onChange={e => setFirstName(e.target.value)} />
+                        <br />
+
+                        <label htmlFor="lastName">Last name:</label>
+                        <input className="card-text" value={lastName} onChange={e => setLastName(e.target.value)} />
                         <br />
 
                         <label htmlFor="email">Personal email:</label>

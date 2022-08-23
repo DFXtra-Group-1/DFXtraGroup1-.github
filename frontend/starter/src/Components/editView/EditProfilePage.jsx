@@ -62,11 +62,31 @@ const EditProfilePage = ({ SERVER_URL }) => {
     const [portfolio, setPortfolio] = useState(graduate.portfolio);
     const [personalSummary, setPersonalSummary] = useState(graduate.personalSummary);
 
-    // const personalProps1 = {
+    const gradProps = {
+        firstName,
+        lastName,
+        personalEmail,
+        digitalFuturesEmail,
+        gitHub,
+        linkedIn,
+        phone,
+        gender,
+        nationality,
+        personality
+    };
 
-    // }
-
-
+    const setProps = {
+        setFirstName,
+        setLastName,
+        setPersonalEmail,
+        setDigitalFuturesEmail,
+        setGitHub,
+        setLinkedIn,
+        setPhone,
+        setGender,
+        setNationality,
+        setPersonality
+    };
 
     const getData = async () => {
         await axios.get(`${SERVER_URL}/graduate/${uuid}`)
@@ -98,7 +118,7 @@ const EditProfilePage = ({ SERVER_URL }) => {
         <>
             <form onSubmit={submitHandler}>
                 <button className="btn" type="submit">Submit draft</button>
-                <PersonalInformation graduate={graduate} setFirstName={setFirstName} setLastName={setLastName} setGender={setGender} setNationality={setNationality} setPersonality={setPersonality} setPhone={setPhone} setLinkedIn={setLinkedIn} setPersonalEmail={setPersonalEmail} setDigitalFuturesEmail={setDigitalFuturesEmail} setGitHub={setGitHub} />
+                <PersonalInformation gradProps={gradProps} setProps={setProps} />
             </form>
         </>
     )

@@ -41,7 +41,7 @@ const ViewProfilePage = ({ SERVER_URL }) => {
 
         await axios.get(`${SERVER_URL}/graduate/${uuid}`)
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 setGraduate(res.data);
             })
     }
