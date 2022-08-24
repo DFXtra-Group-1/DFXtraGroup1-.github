@@ -1,8 +1,8 @@
-const Nationality = () => {
+const Nationality = ({ nationality, setNationality }) => {
     return (
 
-        <select className="form-select" aria-label="Default select example">
-            <option >Nationality</option>
+        <select className="form-select" aria-label="Default select example" onChange={e => setNationality(e.target.value)} defaultValue={nationality}>
+            <option hidden>Nationality</option>
             <option value="Afghanistan">Afghanistan</option>
             <option value="Albania">Albania</option>
             <option value="Algeria">Algeria</option>

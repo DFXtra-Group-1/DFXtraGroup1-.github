@@ -4,9 +4,9 @@ const DropDowns = ({ gradProps2, setProps2 }) => {
     const { setGender, setPersonality, setNationality } = setProps2;
     return (
         <>
-            <select className="form-select" aria-label="Default select example">
-                <option selected>Gender</option>
-                <option value="male">Male</option>
+            <select className="form-select" aria-label="Default select example" onChange={e => setGender(e.target.value)} defaultValue={gender}>
+                <option hidden >Gender</option>
+                <option value="male" >Male</option>
                 <option value="female">Female</option>
                 <option value="non-binary">Non-binary</option>
                 <option value="transgender">Transgender</option>
@@ -17,8 +17,8 @@ const DropDowns = ({ gradProps2, setProps2 }) => {
 
             <Nationality nationality={nationality} setNationality={setNationality} />
 
-            <select className="form-select" aria-label="Default select example">
-                <option selected>Personality Type</option>
+            <select className="form-select" aria-label="Default select example" onChange={e => setPersonality(e.target.value)} defaultValue={personality}>
+                <option hidden >Personality Type</option>
                 <option value="INTJ">Architect - INTJ</option>
                 <option value="INTP">Logician - INTP</option>
                 <option value="ENTJ">Commander - ENTJ</option>
