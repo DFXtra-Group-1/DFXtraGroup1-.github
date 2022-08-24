@@ -18,8 +18,7 @@ const SchoolQualifications = ({schoolQualifications}) => {
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row">1</th>
-                    <td>{school}</td>
+                    <th scope="row">{school}</th>
                     <td>{examType}</td>
                     <td>{subject}</td>
                     <td>{grade}</td>
