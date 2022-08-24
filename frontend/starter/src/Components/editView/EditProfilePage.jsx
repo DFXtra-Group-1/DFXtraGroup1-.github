@@ -109,13 +109,16 @@ const EditProfilePage = ({ SERVER_URL }) => {
             alert(`Something went wrong: ${err.message}`)
         }
     };
-
+    const resetHandler = () => getData();
     return (
         <>
             <form onSubmit={submitHandler}>
-                <button className="btn" type="submit">Submit draft</button>
+                <button className="btn" type="submit">Submit Draft</button>
+                <button className="btn" onClick={resetHandler}>Reset Draft</button>
                 <PersonalInformation gradProps={gradProps} setProps={setProps} />
             </form>
+
+
         </>
     )
 };
