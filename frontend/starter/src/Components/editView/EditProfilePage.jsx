@@ -5,62 +5,35 @@ import axios from 'axios';
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-
 const EditProfilePage = ({ SERVER_URL }) => {
 
     const { uuid } = useParams()
-    const [graduate, setGraduate] = useState({
-        "_id": "",
-        "uuid": "",
-        "available": "",
-        "firstName": "",
-        "lastName": "",
-        "dateOfBirth": "",
-        "gender": "",
-        "nationality": "",
-        "personality": "",
-        "phone": "",
-        "linkedIn": "",
-        "gitHub": "",
-        "personalEmail": "",
-        "digitalFuturesEmail": "",
-        "degrees": [{}],
-        "schoolQualifications": [{}],
-        "workExperience": [{}],
-        "certificatesAndAwards": [{}],
-        "portfolio": [{}],
-        "personalSummary": "",
-        "cohort": "",
-        "learningPath": "",
-        "trainer": "",
-        "trainingFinishDate": ""
-    });
 
-    const _id = graduate._id;
-    const uuid1 = graduate.uuid;
-    const available = graduate.available;
-    const dateOfBirth = graduate.dateOfBirth;
-    const cohort = graduate.cohort;
-    const learningPath = graduate.learningPath;
-    const trainer = graduate.trainer;
-    const trainingFinishDate = graduate.trainingFinishDate;
+    let _id = ``;
+    let uuid1 = ``;
+    let available = ``;
+    let dateOfBirth = ``;
+    let cohort = ``;
+    let learningPath = ``;
+    let trainer = ``;
+    let trainingFinishDate = ``;
 
-    const [firstName, setFirstName] = useState(graduate.firstName);
-    const [lastName, setLastName] = useState(graduate.lastName);
-    const [gender, setGender] = useState(graduate.gender);
-    const [nationality, setNationality] = useState(graduate.nationality);
-    const [personality, setPersonality] = useState(graduate.personality);
-    const [phone, setPhone] = useState(graduate.phone);
-    const [linkedIn, setLinkedIn] = useState(graduate.linkedIn);
-    const [gitHub, setGitHub] = useState(graduate.gitHub);
-    const [personalEmail, setPersonalEmail] = useState(graduate.personalEmail);
-    const [digitalFuturesEmail, setDigitalFuturesEmail] = useState(graduate.digitalFuturesEmail);
-    const [degrees, setDegrees] = useState(graduate.degrees);
-    const [schoolQualifications, setSchoolQualifications] = useState(graduate.schoolQualifications);
-    const [workExperience, setWorkExperience] = useState(graduate.workExperience);
-    const [certificatesAndAwards, setCertificatesAndAwards] = useState(graduate.certificatesAndAwards);
-    const [portfolio, setPortfolio] = useState(graduate.portfolio);
-    const [personalSummary, setPersonalSummary] = useState(graduate.personalSummary);
+    const [firstName, setFirstName] = useState(``);
+    const [lastName, setLastName] = useState(``);
+    const [gender, setGender] = useState(``);
+    const [nationality, setNationality] = useState(``);
+    const [personality, setPersonality] = useState(``);
+    const [phone, setPhone] = useState(``);
+    const [linkedIn, setLinkedIn] = useState(``);
+    const [gitHub, setGitHub] = useState(``);
+    const [personalEmail, setPersonalEmail] = useState(``);
+    const [digitalFuturesEmail, setDigitalFuturesEmail] = useState(``);
+    const [degrees, setDegrees] = useState([{}]);
+    const [schoolQualifications, setSchoolQualifications] = useState([{}]);
+    const [workExperience, setWorkExperience] = useState([{}]);
+    const [certificatesAndAwards, setCertificatesAndAwards] = useState([{}]);
+    const [portfolio, setPortfolio] = useState([{}]);
+    const [personalSummary, setPersonalSummary] = useState(``);
 
     const gradProps = {
         firstName,
@@ -91,9 +64,32 @@ const EditProfilePage = ({ SERVER_URL }) => {
     const getData = async () => {
         await axios.get(`${SERVER_URL}/graduate/${uuid}`)
             .then(res => {
-                setGraduate(res.data)
+                setFirstName(res.data.firstName);
+                setLastName(res.data.lastName);
+                setPersonalEmail(res.data.personalEmail);
+                setDigitalFuturesEmail(res.data.digitalFuturesEmail);
+                setGitHub(res.data.gitHub);
+                setLinkedIn(res.data.linkedIn);
+                setPhone(res.data.phone);
+                setGender(res.data.gender);
+                setNationality(res.data.nationality);
+                setPersonality(res.data.personality);
+                setDegrees(res.data.degrees);
+                setSchoolQualifications(res.data.schoolQualifications);
+                setWorkExperience(res.data.workExperience);
+                setCertificatesAndAwards(res.data.certificatesAndAwards);
+                setPortfolio(res.data.portfolio);
+                setPersonalSummary(res.data.personalSummary);
+                _id = res.data._id;
+                uuid1 = res.data.uuid;
+                available = res.data.available;
+                dateOfBirth = res.data.dateOfBirth;
+                cohort = res.data.cohort;
+                learningPath = res.data.learningPath;
+                trainer = res.data.trainer;
+                trainingFinishDate = res.data.trainingFinishDate;
             })
-    }
+    };
     useEffect(() => {
         getData()
     }, []);

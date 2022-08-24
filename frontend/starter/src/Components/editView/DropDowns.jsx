@@ -1,6 +1,7 @@
 import Nationality from "./Nationality";
-const DropDowns = () => {
-
+const DropDowns = ({ gradProps2, setProps2 }) => {
+    const { gender, personality, nationality } = gradProps2;
+    const { setGender, setPersonality, setNationality } = setProps2;
     return (
         <>
             <select className="form-select" aria-label="Default select example">
@@ -14,7 +15,7 @@ const DropDowns = () => {
 
             <br />
 
-            <Nationality />
+            <Nationality nationality={nationality} setNationality={setNationality} />
 
             <select className="form-select" aria-label="Default select example">
                 <option selected>Personality Type</option>

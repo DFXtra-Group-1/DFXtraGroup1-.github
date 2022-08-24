@@ -4,7 +4,7 @@ import ProfileEdit from "./ProfileEdit";
 const PersonalInformation = ({ gradProps, setProps }) => {
 
     const { firstName, lastName, personalEmail, digitalFuturesEmail, gitHub, linkedIn, phone, gender, nationality, personality } = gradProps;
-    console.log(gradProps);
+
     const { setFirstName, setLastName, setPersonalEmail, setDigitalFuturesEmail, setGitHub, setLinkedIn, setPhone, setGender, setNationality, setPersonality } = setProps;
 
     const gradProps1 = {
@@ -16,6 +16,7 @@ const PersonalInformation = ({ gradProps, setProps }) => {
         linkedIn,
         phone
     };
+
     const gradProps2 = {
         gender,
         nationality,
