@@ -9,14 +9,14 @@ const PersonalStoryView = ({ storyProps, setStoryProps }) => {
     // const addRows = (degrees) => { 
     //   const totalDegree = degrees.length;
     //   degrees.university = totalDegree + 1;
-    //     const updatedTotalDegree = [...degrees]; 
+    //     const updatedTotalDegree = [...degrees];
     //     updatedTotalDegree.push(degrees);
     //     setDegrees(updatedTotalDegree);
     //  }
     
     return (
         <>
-            <Degree degrees={storyProps.degrees} setDegrees={setStoryProps.setDegrees} />
+            <Degree degrees={storyProps.degrees} />
             {/* <SchoolQualifications schoolQualifications={storyProps.schoolQualifications} setSchoolQualifications={setStoryProps.setSchoolQualifications} />
         <WorkExperience workExperience = {storyProps.workExperience} setWorkExperience={setStoryProps.setWorkExperience}/>
         <CertificatesAndAwards certificatesAndAwards = {storyProps.certificatesAndAwards} setCertificatesAndAwards={setStoryProps.setCertificatesAndAwards}/>
