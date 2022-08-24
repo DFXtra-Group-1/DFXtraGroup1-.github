@@ -1,4 +1,3 @@
-import '../../Styles/EditProfilePage.css';
 import PersonalInformation from "./PersonalInformation";
 import GraduateModel from "../utils/Graduate.model";
 
@@ -113,18 +112,16 @@ const EditProfilePage = ({ SERVER_URL }) => {
     const resetHandler = () => getData();
     return (
         <>
-            <div className="ms-5 mt-5">
+            <div className="mx-5 mt-5">
                 <form onSubmit={submitHandler}>
-                    <div className="row">
+                    <div className="row border border-dark mx-1 py-3">
                         <div className="col"><h5>Your Profile</h5></div>
-                        <div className="col-4">
+                        <div className="col-3">
                             <button className="btn" type="submit">Submit Draft</button>
                             <button className="btn" onClick={resetHandler}>Reset Draft</button>
                         </div>
                     </div>
                     <div className="mt-5">
-
-
                         <PersonalInformation gradProps={gradProps} setProps={setProps} />
                     </div>
                 </form>

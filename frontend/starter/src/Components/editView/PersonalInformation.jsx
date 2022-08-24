@@ -1,4 +1,3 @@
-import '../../Styles/PersonalInformation.css';
 import DropDowns from "./DropDowns";
 import ProfileEdit from "./ProfileEdit";
 
@@ -41,21 +40,25 @@ const PersonalInformation = ({ gradProps, setProps }) => {
     };
 
     return (
-        <div className="row">
+        <div className="border border-dark px-3 py-3">
             <h5 className="card-title"> Personal Information </h5>
-            <div className="row">
-                <div className="col">
+            {/* <div className="row"> */}
+            <div id="info">
+                <div id="personal">
                     <ProfileEdit
                         gradProps1={gradProps1} setProps1={setProps1}
                     />
                 </div>
-                <div className="col pt-5 mt-2" >
+
+                <div id="dropdowns" className="pt-5 mt-5">
+                    {/* <div className="col pt-5 mt-5" > */}
                     <DropDowns
                         gradProps2={gradProps2} setProps2={setProps2}
                     />
                 </div>
             </div>
         </div>
+        // </div>
     )
 };
 
