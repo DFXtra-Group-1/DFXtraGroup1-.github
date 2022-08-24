@@ -1,10 +1,107 @@
-// import Calendar from 'react-calendar';
+import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import Form from 'react-bootstrap/Form';
 
-const Degree = ({ degrees }) => {
+const Degree = ({ degrees, setDegrees }) => {
 
-    const { university, degreeSubject, degreeLevel, grade, fromDate, toDate, weight, priority, description } = degrees[0]; 
+    const { university, degreeSubject, degreeLevel, grade, fromDate, toDate, weight, priority, description } = degrees[0];
+    const { setUniversity, setDegreeSubject, setDegreeLevel, setGrade, setFromDate, setToDate, setWeight, setPriority, setDescription } = setDegrees; 
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    const onChangeHandler = e => {
+        //Validation to decide if
+        setUniversity(e.target.value);
+        // should be done or display validation error
+    }; 
 
     return (
+        <>
+            <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Update</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group
+              className="mb-3"
+              controlId="exampleForm.ControlTextarea1"
+            >
+              <Form.Label>University</Form.Label>
+              <Form.Control as="textarea" rows={3}  onChange={onChangeHandler}/>
+            </Form.Group>
+            <Form.Group
+                            className="mb-3"
+                            controlId="exampleForm.ControlTextarea1"
+            >
+              <Form.Label>Degree Subject</Form.Label>
+              <Form.Control as="textarea" rows={3} />
+                        </Form.Group>
+                        <Form.Group
+              className="mb-3"
+              controlId="exampleForm.ControlTextarea1"
+            >
+              <Form.Label>Degree Level</Form.Label>
+              <Form.Control as="textarea" rows={3} />
+                        </Form.Group>
+                        <Form.Group
+              className="mb-3"
+              controlId="exampleForm.ControlTextarea1"
+            >
+              <Form.Label>Grade</Form.Label>
+              <Form.Control as="textarea" rows={3} />
+                        </Form.Group>
+                        <Form.Group
+              className="mb-3"
+              controlId="exampleForm.ControlTextarea1"
+            >
+              <Form.Label>From</Form.Label>
+              <Form.Control type="date" rows={3} />
+            </Form.Group>
+                <Form.Group
+              className="mb-3"
+              controlId="exampleForm.ControlTextarea1"
+            >
+              <Form.Label>To</Form.Label>
+              <Form.Control type="date" rows={3} />
+                        </Form.Group>
+                        <Form.Group
+              className="mb-3"
+              controlId="exampleForm.ControlTextarea1"
+            >
+              <Form.Label>Weight</Form.Label>
+              <Form.Control as="textarea" rows={3} />
+                        </Form.Group>
+                        <Form.Group
+              className="mb-3"
+              controlId="exampleForm.ControlTextarea1"
+            >
+              <Form.Label>Priority</Form.Label>
+              <Form.Control as="textarea" rows={3} />
+                        </Form.Group>
+                        <Form.Group
+              className="mb-3"
+              controlId="exampleForm.ControlTextarea1"
+            >
+              <Form.Label>Description</Form.Label>
+              <Form.Control as="textarea" rows={3} />
+                        </Form.Group>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+            </Modal>
+            
         <table className="table">
             <thead>
                 <tr>
@@ -21,34 +118,24 @@ const Degree = ({ degrees }) => {
             </thead>
             <tbody>
                 <tr>
-            <th scope="row">{university}</th>
+            <th scope="row"> {university} </th>
                     <td>{degreeSubject}</td>
                     <td>{degreeLevel}</td>
                     <td>{grade}</td>
-                    <td> <form action="">
-                            <input type="date" />
-                        {fromDate} </form>
-                    </td>
-                    <td>
-                    <form action="">
-                            <input type="date" />
-                            {toDate} </form>
-                    </td>
+                        <td> {fromDate}</td>
+                    <td> {toDate} </td>
                     <td>{weight}</td>
                     <td>{priority}</td>
                     <td>{description}</td>
-                </tr>
-            </tbody>
-
-             <div>
-      <label>Name</label>
-      <input type="text" value="Hello" />
-      <label>City</label>
-      <input type="text" value="Hello" />
-      <button > Add </button>
-    </div>
-        </table>
+                    </tr>
+            <Button variant="primary" onClick={handleShow}>
+        Edit
+      </Button>
+                </tbody>
+            </table>
+        </>
     );
 }
+
 
 export default Degree;

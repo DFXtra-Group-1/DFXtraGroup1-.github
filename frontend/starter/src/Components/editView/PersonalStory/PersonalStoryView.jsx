@@ -4,15 +4,23 @@ import Portfolio from "./Portfolio";
 import SchoolQualifications from "./SchoolQualifications";
 import WorkExperience from "./WorkExperience";
 
-const PersonalStoryView = ({personalStory}) => {
+const PersonalStoryView = ({ storyProps, setStoryProps }) => {
+    
+    // const addRows = (degrees) => { 
+    //   const totalDegree = degrees.length;
+    //   degrees.university = totalDegree + 1;
+    //     const updatedTotalDegree = [...degrees]; 
+    //     updatedTotalDegree.push(degrees);
+    //     setDegrees(updatedTotalDegree);
+    //  }
     
     return (
         <>
-        <Degree degrees = {personalStory.degrees} />
-        <SchoolQualifications schoolQualifications = {personalStory.schoolQualifications} />
-        <WorkExperience workExperience = {personalStory.workExperience} />
-        <CertificatesAndAwards certificatesAndAwards = {personalStory.certificatesAndAwards} />
-        <Portfolio portfolio = {personalStory.portfolio} />
+            <Degree degrees={storyProps.degrees} setDegrees={setStoryProps.setDegrees} />
+            {/* <SchoolQualifications schoolQualifications={storyProps.schoolQualifications} setSchoolQualifications={setStoryProps.setSchoolQualifications} />
+        <WorkExperience workExperience = {storyProps.workExperience} setWorkExperience={setStoryProps.setWorkExperience}/>
+        <CertificatesAndAwards certificatesAndAwards = {storyProps.certificatesAndAwards} setCertificatesAndAwards={setStoryProps.setCertificatesAndAwards}/>
+        <Portfolio portfolio = {storyProps.portfolio} setPortfolio={setStoryProps.setPortfolio}/> */}
         </>
     )
 }

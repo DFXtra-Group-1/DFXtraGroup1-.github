@@ -1,6 +1,6 @@
 import PersonalStoryView from "./PersonalStory/PersonalStoryView"
 // import PersonalInformation from "./PersonalInformation";
-// import GraduateModel from "../utils/Graduate.model";
+import GraduateModel from "./utils/Graduate.model"; 
 
 import axios from 'axios';
 import { useState, useEffect } from "react";
@@ -62,6 +62,23 @@ const EditProfilePage = ({ SERVER_URL }) => {
         setPersonality
     };
 
+
+    const storyProps = {
+        degrees, 
+        schoolQualifications, 
+        workExperience,
+        certificatesAndAwards, 
+        portfolio
+    };
+
+    const setStoryProps = { 
+        setDegrees, 
+        setSchoolQualifications, 
+        setWorkExperience, 
+        setCertificatesAndAwards, 
+        setPortfolio
+    }
+
     const getData = async () => {
         await axios.get(`${SERVER_URL}/graduate/${uuid}`)
             .then(res => {
@@ -118,7 +135,10 @@ const EditProfilePage = ({ SERVER_URL }) => {
                 <PersonalInformation gradProps={gradProps} setProps={setProps} />
             </form> */}
 
-            <PersonalStoryView gradProps={gradProps} setProps={setProps}/> 
+             <form onSubmit={submitHandler}>
+                <button className="btn" type="submit">Submit draft</button>
+                <PersonalStoryView storyProps={storyProps} setStoryProps={setStoryProps} />
+            </form>
         </>
     )
 };
