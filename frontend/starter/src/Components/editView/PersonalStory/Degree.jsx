@@ -5,7 +5,8 @@ import Form from 'react-bootstrap/Form';
 
 const Degree = ({ degrees }) => {
 
-    const [university, setUniversity] = useState(degrees[0].university); 
+    
+    const [university, setUniversity] = useState(degrees[0].university ); 
     const [degreeSubject, setDegreeSubject] = useState(degrees[0].degreeSubject); 
     const [degreeLevel, setDegreeLevel] = useState(degrees[0].degreeLevel); 
     const [grade, setGrade] = useState(degrees[0].grade); 
@@ -14,6 +15,7 @@ const Degree = ({ degrees }) => {
     const [weight, setWeight] = useState(degrees[0].weight); 
     const [priority, setPriority] = useState(degrees[0].priority); 
     const [description, setDescription] = useState(degrees[0].description); 
+  
 
     const [show, setShow] = useState(false);
 
@@ -22,7 +24,39 @@ const Degree = ({ degrees }) => {
 
     return (
         <>
-            <Modal show={show} onHide={handleClose}>
+          <table className="table">
+            <thead>
+                <tr>
+                    <th scope="col">University</th>
+                    <th scope="col">Degree Subject</th>
+                    <th scope="col">Degree Level</th>
+                    <th scope="col"> Grade </th>
+                    <th scope="col"> From </th>
+                    <th scope="col">To</th>
+                    <th scope="col">Weight</th>
+                    <th scope="col">Priority</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+            <th scope="row"> {university} </th>
+                    <td>{degreeSubject}</td>
+                    <td>{degreeLevel}</td>
+                   <td className="btn-group dropup" > <button type="button" className="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> {grade} </button> </td>
+                        <td> {fromDate}</td>
+                    <td> {toDate} </td>
+                    <td>{weight}</td>
+                    <td>{priority}</td>
+                    <td>{description}</td>
+                    </tr>
+            <Button variant="primary" onClick={handleShow}>
+        Edit
+      </Button>
+                </tbody>
+        </table>
+        
+          <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Update</Modal.Title>
         </Modal.Header>
@@ -102,38 +136,6 @@ const Degree = ({ degrees }) => {
           </Button>
         </Modal.Footer>
             </Modal>
-            
-        <table className="table">
-            <thead>
-                <tr>
-                    <th scope="col">University</th>
-                    <th scope="col">Degree Subject</th>
-                    <th scope="col">Degree Level</th>
-                    <th className="btn-group dropup" scope="col"> <button type="button" className="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Grade </button> </th>
-                    <th scope="col"> From </th>
-                    <th scope="col">To</th>
-                    <th scope="col">Weight</th>
-                    <th scope="col">Priority</th>
-                    <th scope="col">Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-            <th scope="row"> {university} </th>
-                    <td>{degreeSubject}</td>
-                    <td>{degreeLevel}</td>
-                    <td>{grade}</td>
-                        <td> {fromDate}</td>
-                    <td> {toDate} </td>
-                    <td>{weight}</td>
-                    <td>{priority}</td>
-                    <td>{description}</td>
-                    </tr>
-            <Button variant="primary" onClick={handleShow}>
-        Edit
-      </Button>
-                </tbody>
-            </table>
         </>
     );
 }
