@@ -103,7 +103,7 @@ const EditProfilePage = ({ SERVER_URL }) => {
 
     const putGraduate = async graduate => {
         try {
-            await axios.put(`${SERVER_URL}/${uuid}`, graduate)
+            await axios.put(`${SERVER_URL}/graduate/${uuid}`, graduate)
         }
         catch (err) {
             alert(`Something went wrong: ${err.message}`)
