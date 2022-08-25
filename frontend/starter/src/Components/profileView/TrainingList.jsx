@@ -4,7 +4,7 @@ const TrainingList = ({ trainingProp }) => {
     return (
 
         <div className="col-sm-6">
-            <div className="card mx-2 my-5">
+            <div className="card mx-2 my-5 border-white">
                 <div className="card-body">
                     <h5 className="card-title"> Your Training </h5>
                     <div className="ps-5">
