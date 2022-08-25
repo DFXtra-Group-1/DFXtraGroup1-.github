@@ -26,16 +26,23 @@ const YourProfile = ({ graduate }) => {
     const editURL = `/graduate/${graduate.uuid}/edit`;
 
     return (
-        <div className="row">
-            <h5 className="card-title"> Your Profile </h5>
-            <NavLink to={editURL}>
-                <button className="btn">Edit</button>
-            </NavLink>
-            <ProfileList
-                gradProps1={gradProps1}
-            />
-            <ProfileCard
-                gradProps2={gradProps2} />
+        <div>
+            <div className="row">
+                <h5 className="card-title col pt-2"> Your Profile </h5>
+                <div className="col-10 pb-1">
+                    <NavLink to={editURL}>
+                        <button className="btn" id="edit">Edit</button>
+                    </NavLink>
+                </div>
+            </div>
+            <div className="row">
+                <div className="col">
+                    <ProfileList gradProps1={gradProps1} />
+                </div>
+                <div className="col">
+                    <ProfileCard gradProps2={gradProps2} />
+                </div>
+            </div>
         </div>
     )
 

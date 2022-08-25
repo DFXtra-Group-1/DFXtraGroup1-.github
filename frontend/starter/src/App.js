@@ -7,7 +7,7 @@ import EditProfilePage from './Components/editView/EditProfilePage';
 
 function App() {
 
-  const SERVER_URL = 'http://localhost:4000'
+  const SERVER_URL = 'http://localhost:3000'
 
   return (
 

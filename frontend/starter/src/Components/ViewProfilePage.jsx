@@ -54,18 +54,16 @@ const ViewProfilePage = ({ SERVER_URL }) => {
 
     return (
         <>
-            <div className="centered-div" id="view">
-                <div className="mx-5 mt-5">
-                    <div className="row border border-dark px-3 py-3" id="profile">
-                        <YourProfile graduate={graduate} />
-                    </div>
+            <div className="mx-5 mt-5">
+                <div className="row border border-dark px-3 py-3 mx-1">
+                    <YourProfile graduate={graduate} />
                 </div>
-                <div className="border border-dark px-3 py-3" id="training">
-                    <YourTraining graduate={graduate} />
-                </div>
-                <div className="border border-dark px-3 py-3" id="info">
-                    <Info graduate={graduate} />
-                </div>
+            </div>
+            <div className="border border-dark px-3 mx-5 my-5">
+                <YourTraining graduate={graduate} />
+            </div>
+            <div className="border border-dark px-3 py-3 mx-5 mb-5">
+                <Info graduate={graduate} />
             </div>
         </>
     );

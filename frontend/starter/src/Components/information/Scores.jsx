@@ -4,20 +4,20 @@ const Scores = ({ scoresProp }) => {
 
         <>
             <div className="row">
-                <div className="col col-lg-2 col-md-3 col-sm-1 ">
-                    Scores
+                <div className="col">
+                    <p>Scores:</p>
                 </div>
-                <div className="col col-lg-6 col-md-7 col-sm-6 border border-4">
-                    {scoresProp.certificatesAndAwards[0].award} : {scoresProp.certificatesAndAwards[0].grade}
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
+                <div className="col-10">
+                    <div className="border border-dark me-3">
+                        <p className="px-3 py-3">
+                            {scoresProp.certificatesAndAwards[0].award} : {scoresProp.certificatesAndAwards[0].grade}
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                        </p>
+                    </div>
                 </div>
-
-
             </div>
         </>
     );

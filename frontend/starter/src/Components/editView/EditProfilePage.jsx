@@ -139,10 +139,10 @@ const EditProfilePage = ({ SERVER_URL }) => {
                             <button className="btn" id="reset" onClick={resetHandler}>Reset Draft</button>
                         </div>
                     </div>
-                    <div className="mt-5">
+                    <div className="my-5">
                         <PersonalInformation gradProps={gradProps} setProps={setProps} />
                     </div>
-                    <div> <PersonalStoryView storyProps={storyProps} setStoryProps={setStoryProps} /> </div>
+                    <div className="my-5"> <PersonalStoryView storyProps={storyProps} setStoryProps={setStoryProps} /> </div>
                 </form>
             </div>
         </>

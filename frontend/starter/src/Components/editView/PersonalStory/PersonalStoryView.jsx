@@ -7,17 +7,24 @@ import WorkExperience from "./WorkExperience";
 const PersonalStoryView = ({ storyProps }) => {
 
     const { degrees, schoolQualifications, workExperience, certificatesAndAwards, portfolio } = storyProps;
-    
+
     return (
-        <table className="table">
-            <Degree degrees={degrees} />
-            <SchoolQualifications schoolQualifications={schoolQualifications} />
-            <WorkExperience workExperience={workExperience} />
-            <CertificatesAndAwards certificatesAndAwards={certificatesAndAwards} />
-            <Portfolio portfolio={portfolio} />
-        </table>
+        <div className="border border-dark">
+            <div className="ps-3 py-3">
+                <h5>Personal Story</h5>
+            </div>
+            <div className="px-3 pt-3">
+                <table className="table">
+                    <Degree degrees={degrees} />
+                    <SchoolQualifications schoolQualifications={schoolQualifications} />
+                    <WorkExperience workExperience={workExperience} />
+                    <CertificatesAndAwards certificatesAndAwards={certificatesAndAwards} />
+                    <Portfolio portfolio={portfolio} />
+                </table>
+            </div>
+        </div>
     )
 }
 
-export default PersonalStoryView; 
+export default PersonalStoryView;
 
