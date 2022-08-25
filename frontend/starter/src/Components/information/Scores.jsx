@@ -1,9 +1,5 @@
 
 const Scores = ({ scoresProp }) => {
-    // const { award, grade } = scoresProp.certificatesAndAwards[{
-    //     award: "",
-    //     grade: "",
-    // }];
     return (
 
         <>
