@@ -71,14 +71,6 @@ const EditProfilePage = ({ SERVER_URL }) => {
         portfolio
     };
 
-    const setStoryProps = { 
-        setDegrees, 
-        setSchoolQualifications, 
-        setWorkExperience, 
-        setCertificatesAndAwards, 
-        setPortfolio
-    }
-
     const getData = async () => {
         await axios.get(`${SERVER_URL}/graduate/${uuid}`)
             .then(res => {
@@ -137,7 +129,7 @@ const EditProfilePage = ({ SERVER_URL }) => {
 
              <form onSubmit={submitHandler}>
                 <button className="btn" type="submit">Submit draft</button>
-                <PersonalStoryView storyProps={storyProps} setStoryProps={setStoryProps} />
+                <PersonalStoryView storyProps={storyProps} />
             </form>
         </>
     )
