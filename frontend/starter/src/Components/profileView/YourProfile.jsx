@@ -13,7 +13,7 @@ const YourProfile = ({ graduate }) => {
         gitHub: graduate.gitHub,
         linkedIn: graduate.linkedIn,
         phone: graduate.phone
-    }
+    };
 
     const gradProps2 = {
         degrees: graduate.degrees,
@@ -21,14 +21,14 @@ const YourProfile = ({ graduate }) => {
         workExperience: graduate.workExperience,
         certificatesAndAwards: graduate.certificatesAndAwards,
         portfolio: graduate.portfolio
-    }
-    // console.log(graduate);
+    };
 
+    const editURL = `/graduate/${graduate.uuid}/edit`;
 
     return (
         <div className="row">
             <h5 className="card-title"> Your Profile </h5>
-            <NavLink to="/graduate/:uuid/edit">
+            <NavLink to={editURL}>
                 <button className="btn">Edit</button>
             </NavLink>
             <ProfileList
