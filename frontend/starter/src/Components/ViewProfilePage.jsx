@@ -54,9 +54,19 @@ const ViewProfilePage = ({ SERVER_URL }) => {
 
     return (
         <>
-            <YourProfile graduate={graduate} />
-            <YourTraining graduate={graduate} />
-            <Info graduate={graduate} />
+            <div className="centered-div" id="view">
+                <div className="mx-5 mt-5">
+                    <div className="row border border-dark px-3 py-3" id="profile">
+                        <YourProfile graduate={graduate} />
+                    </div>
+                </div>
+                <div className="border border-dark px-3 py-3" id="training">
+                    <YourTraining graduate={graduate} />
+                </div>
+                <div className="border border-dark px-3 py-3" id="info">
+                    <Info graduate={graduate} />
+                </div>
+            </div>
         </>
     );
 }
