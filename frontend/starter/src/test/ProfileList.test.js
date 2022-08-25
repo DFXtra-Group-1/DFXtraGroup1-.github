@@ -4,15 +4,15 @@ import ProfileList from '../Components/profileView/ProfileList';
 import mockData from './graduate-user-test.json';
 
 describe(`Profile list tests`, () => {
-    it(`should render profile lists`, () => {
+    // xit(`should render profile lists`, () => {
 
-        render(<ProfileList gradProps1={mockData.graduateUser} />);
+    //     render(<ProfileList gradProps1={mockData.graduateUser} />);
 
-        const title = screen.getByRole(`heading`);
+    //     const title = screen.getByRole(`heading`);
 
-        expect(title).toBeInTheDocument();
+    //     expect(title).toBeInTheDocument();
 
-    })
+    // })
 
     it(`should render David's details`, () => {
 
