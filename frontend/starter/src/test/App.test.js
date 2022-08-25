@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import App from '../App';
 
-xtest('renders learn react link', () => {
+test('renders learn react link', () => {
+  jest.spyOn(console, 'warn').mockImplementation(() => { });
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
+  const linkElement = screen.getByText(/dfx/i);
   expect(linkElement).toBeInTheDocument();
 });
