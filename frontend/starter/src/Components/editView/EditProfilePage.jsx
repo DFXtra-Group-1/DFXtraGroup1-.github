@@ -117,8 +117,8 @@ const EditProfilePage = ({ SERVER_URL }) => {
                     <div className="row border border-dark mx-1 py-3">
                         <div className="col"><h5>Your Profile</h5></div>
                         <div className="col-3">
-                            <button className="btn" type="submit">Submit Draft</button>
-                            <button className="btn" onClick={resetHandler}>Reset Draft</button>
+                            <button className="btn me-3" type="submit" id="submit">Submit Draft</button>
+                            <button className="btn" id="reset" onClick={resetHandler}>Reset Draft</button>
                         </div>
                     </div>
                     <div className="mt-5">
