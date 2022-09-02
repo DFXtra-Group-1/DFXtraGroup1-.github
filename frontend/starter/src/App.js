@@ -7,7 +7,9 @@ import EditProfilePage from './Components/editView/EditProfilePage';
 
 function App() {
 
-  const SERVER_URL = 'https://cors-anywhere.herokuapp.com/http://3.209.113.207'
+  //const SERVER_URL = 'https://cors-anywhere.herokuapp.com/http://3.209.113.207'
+  const SERVER_URL = 'https://cors-anywhere.herokuapp.com/http://44.198.112.86'
+  //const SERVER_URL = 'http://localhost:3000'
 
   return (
 
